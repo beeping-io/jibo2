@@ -41,11 +41,13 @@ Every Linear task MUST end with two labelled sections:
 
 ```markdown
 ## 🧪 Automated tests
+
 <concrete test plan, OR "Skipped porque [razón]">
 
 ## 🧑‍🔬 Human QA Checkpoint
+
 <concrete plan: URL to open, what to validate, what feedback to request,
- OR "Skipped porque [razón]">
+OR "Skipped porque [razón]">
 ```
 
 Any task created in Linear without both sections must be updated before it
@@ -54,6 +56,7 @@ can be closed. Script generators that create tasks MUST embed this template.
 ## 🛠️ Stack-specific rules
 
 ### Python (agent + SDK + CLI)
+
 - Python 3.12
 - Package manager: `uv`
 - Lint: `ruff` in strict mode (E, F, W, I, B, UP, SIM, C90, N, ANN, RUF)
@@ -62,23 +65,27 @@ can be closed. Script generators that create tasks MUST embed this template.
 - Type checks: `mypy --strict` on public API modules
 
 ### Flutter (iOS + Android apps)
+
 - Flutter stable channel
 - Lint: `flutter_lints` + custom stricter rules once configured
 - Format: `dart format` mandatory
 - State management: decision pending (Riverpod recommended)
 
 ### Next.js (backoffice + marketplace + docs)
+
 - Next.js 14 + App Router + TypeScript
 - Lint: `eslint` with `next/core-web-vitals` + `@typescript-eslint/strict`
 - Format: `prettier` with tailwind plugin
 - Styling: Tailwind CSS
 
 ### ROS2 (robot stack)
+
 - ROS2 Humble
 - C++: `clang-tidy` + `clang-format` (Google style)
 - Python nodes follow the Python rules above
 
 ### Firebase (backend)
+
 - Cloud Functions: TypeScript + `@google-cloud/functions-framework`
 - Firestore rules + indexes: versioned in repo, deployed via CI
 - Storage rules: versioned in repo

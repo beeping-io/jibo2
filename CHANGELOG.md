@@ -12,5 +12,6 @@ end-to-end. The jump to `1.0.0` is a coordinated decision, never automatic.
 ## [Unreleased]
 
 ### Added
+
 - Initial product specification (`docs/PRODUCTO.md`).
 - Repository bootstrap via `/worktree-init`.
