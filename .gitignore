@@ -1,0 +1,179 @@
+# ──────────────────────────────────────────────────────────────
+# Jibo2 — multi-stack .gitignore
+# Python + Flutter + Node/Next.js + Firebase + ROS2 + macOS
+# ──────────────────────────────────────────────────────────────
+
+# ─── OS ───
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# ─── Editors / IDE ───
+.idea/
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+
+# ─── Environment / secrets ───
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.crt
+*.p12
+*.p8
+.firebase/
+firebase-debug.log
+firestore-debug.log
+ui-debug.log
+serviceAccount*.json
+!serviceAccount.example.json
+
+# ─── Python ───
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.nox/
+.coverage
+.coverage.*
+htmlcov/
+.hypothesis/
+.venv/
+venv/
+env/
+ENV/
+
+# uv
+.uv/
+uv.lock.backup
+
+# ─── Node / Next.js / Turborepo ───
+node_modules/
+.next/
+out/
+.turbo/
+*.tsbuildinfo
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.pnpm-store/
+.yarn/
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+.npm/
+.eslintcache
+
+# ─── Flutter / Dart ───
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+build/
+.fvm/
+pubspec.lock.bak
+
+# iOS
+ios/Pods/
+ios/.symlinks/
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+ios/Flutter/App.framework
+ios/Flutter/flutter_assets
+ios/Flutter/Generated.xcconfig
+ios/Flutter/ephemeral/
+ios/ServiceDefinitions.json
+*.mode1v3
+*.mode2v3
+*.pbxuser
+*.perspectivev3
+xcuserdata/
+*.xcworkspace/xcuserdata/
+DerivedData/
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Android
+android/.gradle/
+android/captures/
+android/gradlew
+android/gradlew.bat
+android/local.properties
+android/**/GeneratedPluginRegistrant.java
+android/key.properties
+*.jks
+*.keystore
+!debug.keystore
+
+# ─── ROS2 / build outputs ───
+install/
+log/
+build/
+.catkin_tools/
+devel/
+
+# ─── Firmware / reverse engineering ───
+firmware/backups/
+firmware/dumps/
+*.img
+*.bin
+!configs/*.bin
+!fixtures/*.bin
+
+# ─── Claude / agents ───
+.claude/
+!.claude/settings.json
+!.claude/commands/
+.worktree-init-state.json
+
+# ─── Misc ───
+*.log
+logs/
+tmp/
+.cache/
+coverage/
+.nyc_output/
+*.pid
+*.seed
+*.pid.lock
