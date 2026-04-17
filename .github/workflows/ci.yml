@@ -66,28 +66,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-      - name: Install ruff
-        run: pip install ruff
-      - name: Ruff lint
-        run: ruff check .
-      - name: Ruff format (check only)
-        run: ruff format --check .
+      - uses: astral-sh/setup-uv@v5
+      - name: uv sync (dev deps)
+        run: uv sync --frozen
+      - name: Ruff lint + format (via Makefile)
+        run: make lint
 
   pytest:
     name: 🧪 Pytest smoke
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-      - name: Install test deps
-        run: pip install pytest pytest-asyncio pytest-cov
-      - name: Run tests
-        run: pytest -v
+      - uses: astral-sh/setup-uv@v5
+      - name: uv sync (dev deps)
+        run: uv sync --frozen
+      - name: Run tests (via Makefile)
+        run: make test
 
   markdown-lint:
     name: 📄 Markdown lint

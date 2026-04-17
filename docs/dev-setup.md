@@ -94,6 +94,24 @@ pre-commit hooks and seeds the caches by running all hooks once.
 uv run --with pre-commit pre-commit run --all-files
 ```
 
+## 🎯 Make targets
+
+For day-to-day work, the repo exposes a `Makefile` with the usual verbs:
+
+```sh
+make install     # uv sync (dev deps)
+make test        # pytest via uv
+make test-cov    # pytest with coverage report
+make lint        # ruff check + ruff format --check
+make format      # ruff format (rewrites files)
+make hooks       # pre-commit run --all-files
+make check       # lint + test — same gate as CI
+make clean       # drop caches (pytest/ruff/mypy/__pycache__)
+```
+
+`make check` is what CI runs; matching it locally catches 95% of
+regressions before you push.
+
 ### Troubleshooting
 
 - **`uv: command not found`** after install on Linux → the installer
