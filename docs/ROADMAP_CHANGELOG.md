@@ -13,7 +13,7 @@
 - **Fecha fin estimada (con 20% margen)**: 2026-12-15
 - **Velocidad asumida**: 8 story points / día
 - **Estado global**: ✅ En tiempo
-- **Última actualización**: 2026-04-17 (trigger: J2-8 closed · +1 SP, total 13/72 F0)
+- **Última actualización**: 2026-04-17 (trigger: J2-9 closed · F0:M2 at 100% · 16/72 F0)
 
 | #   | Milestone                      | Story points | Inicio est. | Fin est.   | Estado |
 | --- | ------------------------------ | ------------ | ----------- | ---------- | ------ |
@@ -35,6 +35,23 @@
 ---
 
 ## 📜 History
+
+### [2026-04-17] — Closed J2-9 · 🎉 Milestone F0:M2 complete
+
+**Trigger**: J2-9 closed · 3 SP delivered · **Milestone F0:M2 🧪 Testing infrastructure → 100%**
+**Net delta global**: 0 días
+**Nueva fecha fin estimada**: 2026-12-15 (sin cambio)
+**Nuevo estado global**: ✅ (sin cambio)
+
+#### Milestone closed
+
+- **F0:M2 🧪 Testing infrastructure (pytest + E2E harness)**: 4/4 tasks · 8 SP consumed (2 + 2 + 1 + 3).
+
+#### Notas
+
+F0 total: 16/72 SP (~22%). 2 de 6 milestones de F0 cerrados. Test suite crece de 2 → 11 tests. Coverage 100%. Harness listo — F1+ podrán escribir E2E tests sin hardware.
+
+Siguientes milestones en F0: M3 (📊 logging), M4 (🔐 secrets), M5 (🔥 Firebase), M6 (📈 analytics).
 
 ### [2026-04-17] — Closed J2-8 (📁 Fixtures directory structure)
 
