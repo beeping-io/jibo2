@@ -1,0 +1,49 @@
+# Default to LF line endings
+* text=auto eol=lf
+
+# Explicit text
+*.md    text eol=lf
+*.py    text eol=lf
+*.ts    text eol=lf
+*.tsx   text eol=lf
+*.js    text eol=lf
+*.jsx   text eol=lf
+*.dart  text eol=lf
+*.yaml  text eol=lf
+*.yml   text eol=lf
+*.json  text eol=lf
+*.toml  text eol=lf
+*.sh    text eol=lf
+*.cmd   text eol=crlf
+*.bat   text eol=crlf
+
+# Binary
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.webp  binary
+*.ico   binary
+*.mp3   binary
+*.mp4   binary
+*.wav   binary
+*.ogg   binary
+*.ttf   binary
+*.otf   binary
+*.woff  binary
+*.woff2 binary
+*.pdf   binary
+
+# Firmware / reverse engineering artifacts (LFS candidates)
+*.img   filter=lfs diff=lfs merge=lfs -text
+*.bin   filter=lfs diff=lfs merge=lfs -text
+*.dump  filter=lfs diff=lfs merge=lfs -text
+*.fw    filter=lfs diff=lfs merge=lfs -text
+
+# Generated / lock files — avoid GitHub diff noise
+*.lock          linguist-generated=true
+pubspec.lock    linguist-generated=true
+package-lock.json linguist-generated=true
+pnpm-lock.yaml  linguist-generated=true
+uv.lock         linguist-generated=true
+Cargo.lock      linguist-generated=true

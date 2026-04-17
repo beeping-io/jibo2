@@ -1,0 +1,100 @@
+[project]
+name = "jibo2"
+version = "0.0.0"
+description = "🤖 Jibo2 — Open source resurrection of the Jibo social robot (2017)."
+readme = "README.md"
+license = { text = "Apache-2.0" }
+authors = [{ name = "Alfred Rivas", email = "alfred@beeping.io" }]
+requires-python = ">=3.12"
+
+# Root-level placeholder. Real subpackages (jibo2-robot, jibo2-skills-sdk,
+# jibo2-cli, jibo2-firmware-tools) will live under `packages/` or their
+# own repos once Phase 0 M0.1 scaffolds them.
+dependencies = []
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+extend-exclude = [
+  "build",
+  "dist",
+  ".venv",
+  "firmware/dumps",
+  "firmware/backups",
+]
+
+[tool.ruff.lint]
+# Strict rule selection per CLAUDE.md
+select = [
+  "E",    # pycodestyle errors
+  "F",    # pyflakes
+  "W",    # pycodestyle warnings
+  "I",    # isort
+  "B",    # flake8-bugbear
+  "UP",   # pyupgrade
+  "SIM",  # flake8-simplify
+  "C90",  # mccabe complexity
+  "N",    # pep8-naming
+  "ANN",  # flake8-annotations
+  "RUF",  # ruff-specific
+  "ASYNC", # flake8-async
+  "S",    # flake8-bandit (security)
+  "BLE",  # blind-except
+  "RET",  # flake8-return
+  "TRY",  # tryceratops
+]
+ignore = [
+  "S101",    # Use of assert (fine in tests)
+]
+fixable = ["ALL"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**/*.py" = ["S101", "ANN", "D"]
+"scripts/**/*.py" = ["T20"]
+
+[tool.ruff.lint.mccabe]
+max-complexity = 10
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "lf"
+docstring-code-format = true
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+testpaths = ["tests"]
+addopts = [
+  "-ra",
+  "--strict-markers",
+  "--strict-config",
+]
+asyncio_mode = "auto"
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+warn_unused_ignores = true
+warn_return_any = true
+warn_unreachable = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+exclude = [
+  "build",
+  "dist",
+  ".venv",
+]
+
+[tool.coverage.run]
+branch = true
+source = ["src"]
+
+[tool.coverage.report]
+fail_under = 70
+show_missing = true
+skip_covered = true
+exclude_lines = [
+  "pragma: no cover",
+  "raise NotImplementedError",
+  "if TYPE_CHECKING:",
+]
