@@ -15,22 +15,22 @@
 - **Estado global**: ✅ En tiempo
 - **Última actualización**: 2026-04-17 (trigger: `/worktree-init` bootstrap)
 
-| # | Milestone | Story points | Inicio est. | Fin est. | Estado |
-|---|---|---|---|---|---|
-| F0 | 🏗️ Foundation | ~45 | 2026-04-17 | 2026-04-26 | ✅ |
-| F1 | 🔓 Reverse Engineering | ~100 | 2026-04-27 | 2026-05-20 | ✅ |
-| F2 | ⚙️ ROS2 Robotics Stack | ~115 | 2026-05-18 | 2026-06-19 | ✅ |
-| F3 | 🖼️ Web Backoffice | TBD | 2026-06-01 | 2026-07-03 | ✅ |
-| F4 | 🗣️ Voice Pipeline + Benchmarks | TBD | 2026-06-15 | 2026-08-04 | ✅ |
-| F5 | 😊 Expressions + Behavior | TBD | 2026-07-13 | 2026-08-14 | ✅ |
-| F6 | 🔌 Skills Marketplace Backend | TBD | 2026-07-27 | 2026-08-28 | ✅ |
-| F7 | 🌐 Marketplace Frontend | TBD | 2026-08-10 | 2026-09-11 | ✅ |
-| F8 | 📱 iOS App Flutter | TBD | 2026-08-24 | 2026-10-16 | ✅ |
-| F9 | 🤖 Android App Flutter | TBD | 2026-09-21 | 2026-11-13 | ✅ |
-| F10 | 🔊 Beeping Integration | TBD | 2026-09-07 | 2026-10-23 | ✅ |
-| F11 | 🌍 Community Platform | TBD | 2026-09-21 | 2026-11-27 | ✅ |
-| F12 | 🚀 Launch Prep | TBD | 2026-10-26 | 2026-12-11 | ⚠️ |
-| F13 | 👀 Admin Backoffice (paralelo) | TBD | 2026-07-27 | 2026-09-11 | ✅ |
+| #   | Milestone                      | Story points | Inicio est. | Fin est.   | Estado |
+| --- | ------------------------------ | ------------ | ----------- | ---------- | ------ |
+| F0  | 🏗️ Foundation                  | ~45          | 2026-04-17  | 2026-04-26 | ✅     |
+| F1  | 🔓 Reverse Engineering         | ~100         | 2026-04-27  | 2026-05-20 | ✅     |
+| F2  | ⚙️ ROS2 Robotics Stack         | ~115         | 2026-05-18  | 2026-06-19 | ✅     |
+| F3  | 🖼️ Web Backoffice              | TBD          | 2026-06-01  | 2026-07-03 | ✅     |
+| F4  | 🗣️ Voice Pipeline + Benchmarks | TBD          | 2026-06-15  | 2026-08-04 | ✅     |
+| F5  | 😊 Expressions + Behavior      | TBD          | 2026-07-13  | 2026-08-14 | ✅     |
+| F6  | 🔌 Skills Marketplace Backend  | TBD          | 2026-07-27  | 2026-08-28 | ✅     |
+| F7  | 🌐 Marketplace Frontend        | TBD          | 2026-08-10  | 2026-09-11 | ✅     |
+| F8  | 📱 iOS App Flutter             | TBD          | 2026-08-24  | 2026-10-16 | ✅     |
+| F9  | 🤖 Android App Flutter         | TBD          | 2026-09-21  | 2026-11-13 | ✅     |
+| F10 | 🔊 Beeping Integration         | TBD          | 2026-09-07  | 2026-10-23 | ✅     |
+| F11 | 🌍 Community Platform          | TBD          | 2026-09-21  | 2026-11-27 | ✅     |
+| F12 | 🚀 Launch Prep                 | TBD          | 2026-10-26  | 2026-12-11 | ⚠️     |
+| F13 | 👀 Admin Backoffice (paralelo) | TBD          | 2026-07-27  | 2026-09-11 | ✅     |
 
 ---
 

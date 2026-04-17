@@ -26,22 +26,22 @@
 
 ## 🗓️ Tabla de fases
 
-| # | Fase | Milestones | Inicio est. | Fin est. (raw) | Fin est. (+20%) | Estado |
-|---|---|---|---|---|---|---|
-| F0 | 🏗️ Foundation | M1-M6 | 2026-04-17 | 2026-04-24 | 2026-04-26 | ✅ |
-| F1 | 🔓 Reverse Engineering | M7-M12 | 2026-04-27 | 2026-05-15 | 2026-05-20 | ✅ |
-| F2 | ⚙️ ROS2 Robotics Stack | M13-M20 | 2026-05-18 | 2026-06-12 | 2026-06-19 | ✅ |
-| F3 | 🖼️ Web Backoffice | M21-M26 | 2026-06-01 | 2026-06-26 | 2026-07-03 | ✅ |
-| F4 | 🗣️ Voice Pipeline + Benchmarks | M27-M36 | 2026-06-15 | 2026-07-24 | 2026-08-04 | ✅ |
-| F5 | 😊 Expressions + Behavior | M37-M42 | 2026-07-13 | 2026-08-07 | 2026-08-14 | ✅ |
-| F6 | 🔌 Skills Marketplace Backend | M43-M48 | 2026-07-27 | 2026-08-21 | 2026-08-28 | ✅ |
-| F7 | 🌐 Marketplace Frontend | M49-M53 | 2026-08-10 | 2026-09-04 | 2026-09-11 | ✅ |
-| F8 | 📱 iOS App Flutter | M54-M62 | 2026-08-24 | 2026-10-02 | 2026-10-16 | ✅ |
-| F9 | 🤖 Android App Flutter | M63-M72 | 2026-09-21 | 2026-10-30 | 2026-11-13 | ✅ |
-| F10 | 🔊 Beeping Integration | M73-M77 | 2026-09-07 | 2026-10-16 | 2026-10-23 | ✅ |
-| F11 | 🌍 Community Platform | M78-M85 | 2026-09-21 | 2026-11-13 | 2026-11-27 | ✅ |
-| F12 | 🚀 Launch Prep | M86-M90 | 2026-10-26 | 2026-11-27 | 2026-12-11 | ⚠️ (margen ajustado) |
-| F13 | 👀 Admin Backoffice (paralelo) | M91-M96 | 2026-07-27 | 2026-09-04 | 2026-09-11 | ✅ |
+| #   | Fase                           | Milestones | Inicio est. | Fin est. (raw) | Fin est. (+20%) | Estado               |
+| --- | ------------------------------ | ---------- | ----------- | -------------- | --------------- | -------------------- |
+| F0  | 🏗️ Foundation                  | M1-M6      | 2026-04-17  | 2026-04-24     | 2026-04-26      | ✅                   |
+| F1  | 🔓 Reverse Engineering         | M7-M12     | 2026-04-27  | 2026-05-15     | 2026-05-20      | ✅                   |
+| F2  | ⚙️ ROS2 Robotics Stack         | M13-M20    | 2026-05-18  | 2026-06-12     | 2026-06-19      | ✅                   |
+| F3  | 🖼️ Web Backoffice              | M21-M26    | 2026-06-01  | 2026-06-26     | 2026-07-03      | ✅                   |
+| F4  | 🗣️ Voice Pipeline + Benchmarks | M27-M36    | 2026-06-15  | 2026-07-24     | 2026-08-04      | ✅                   |
+| F5  | 😊 Expressions + Behavior      | M37-M42    | 2026-07-13  | 2026-08-07     | 2026-08-14      | ✅                   |
+| F6  | 🔌 Skills Marketplace Backend  | M43-M48    | 2026-07-27  | 2026-08-21     | 2026-08-28      | ✅                   |
+| F7  | 🌐 Marketplace Frontend        | M49-M53    | 2026-08-10  | 2026-09-04     | 2026-09-11      | ✅                   |
+| F8  | 📱 iOS App Flutter             | M54-M62    | 2026-08-24  | 2026-10-02     | 2026-10-16      | ✅                   |
+| F9  | 🤖 Android App Flutter         | M63-M72    | 2026-09-21  | 2026-10-30     | 2026-11-13      | ✅                   |
+| F10 | 🔊 Beeping Integration         | M73-M77    | 2026-09-07  | 2026-10-16     | 2026-10-23      | ✅                   |
+| F11 | 🌍 Community Platform          | M78-M85    | 2026-09-21  | 2026-11-13     | 2026-11-27      | ✅                   |
+| F12 | 🚀 Launch Prep                 | M86-M90    | 2026-10-26  | 2026-11-27     | 2026-12-11      | ⚠️ (margen ajustado) |
+| F13 | 👀 Admin Backoffice (paralelo) | M91-M96    | 2026-07-27  | 2026-09-04     | 2026-09-11      | ✅                   |
 
 **Fin estimado global (con margen)**: ~2026-12-15
 
@@ -96,13 +96,13 @@ Los 96 milestones ya existen en Linear con sus fechas target.
 
 ## ⚠️ Riesgos que pueden mover fechas
 
-| Riesgo | Impacto potencial | Mitigación |
-|---|---|---|
-| 🧱 Brickeo del Jibo | F1-F2 bloqueadas indefinidamente | Backup + recovery procedure (M8 + M12) |
-| 🐌 Tegra K1 no aguanta ROS2 nativo | F2 +1-2 sem (host companion) | Evaluación en M14 |
-| 💸 API costs explotan | F4 paused hasta caps | Benchmark-driven + Remote Config caps |
-| 🔌 Hardware irremplazable roto | Proyecto bloqueado | Spare unit recomendada antes de F1 |
-| 🧑‍💻 Solo-dev fatigue | Timeline +30% si hay parón | Milestones cortos, QA checkpoints frecuentes |
+| Riesgo                             | Impacto potencial                | Mitigación                                   |
+| ---------------------------------- | -------------------------------- | -------------------------------------------- |
+| 🧱 Brickeo del Jibo                | F1-F2 bloqueadas indefinidamente | Backup + recovery procedure (M8 + M12)       |
+| 🐌 Tegra K1 no aguanta ROS2 nativo | F2 +1-2 sem (host companion)     | Evaluación en M14                            |
+| 💸 API costs explotan              | F4 paused hasta caps             | Benchmark-driven + Remote Config caps        |
+| 🔌 Hardware irremplazable roto     | Proyecto bloqueado               | Spare unit recomendada antes de F1           |
+| 🧑‍💻 Solo-dev fatigue                | Timeline +30% si hay parón       | Milestones cortos, QA checkpoints frecuentes |
 
 ## 🔗 Referencias
 
