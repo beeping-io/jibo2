@@ -13,7 +13,7 @@
 - **Fecha fin estimada (con 20% margen)**: 2026-12-15
 - **Velocidad asumida**: 8 story points / día
 - **Estado global**: ✅ En tiempo
-- **Última actualización**: 2026-04-17 (trigger: J2-3 closed · +1 SP, total 4/72 F0)
+- **Última actualización**: 2026-04-17 (trigger: J2-4 closed · +2 SP, total 6/72 F0)
 
 | #   | Milestone                      | Story points | Inicio est. | Fin est.   | Estado |
 | --- | ------------------------------ | ------------ | ----------- | ---------- | ------ |
@@ -35,6 +35,17 @@
 ---
 
 ## 📜 History
+
+### [2026-04-17] — Closed J2-4 (🎯 Flutter SDK install + doctor docs)
+
+**Trigger**: J2-4 closed · 2 SP delivered
+**Net delta global**: 0 días
+**Nueva fecha fin estimada**: 2026-12-15 (sin cambio)
+**Nuevo estado global**: ✅ (sin cambio)
+
+#### Notas
+
+F0:M1 ahora 4/5 tasks completed (80%). F0 total: 6/72 SP (~8%). Docs-only task — QA postponed to F8:M54 cuando el subproyecto Flutter se scaffolde.
 
 ### [2026-04-17] — Closed J2-3 (💻 VSCode recommended extensions)
 
