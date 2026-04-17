@@ -13,7 +13,7 @@
 - **Fecha fin estimada (con 20% margen)**: 2026-12-15
 - **Velocidad asumida**: 8 story points / día
 - **Estado global**: ✅ En tiempo
-- **Última actualización**: 2026-04-17 (trigger: J2-1 closed · 1 SP delivered)
+- **Última actualización**: 2026-04-17 (trigger: J2-2 closed · +2 SP, total 3/72 F0)
 
 | #   | Milestone                      | Story points | Inicio est. | Fin est.   | Estado |
 | --- | ------------------------------ | ------------ | ----------- | ---------- | ------ |
@@ -35,6 +35,22 @@
 ---
 
 ## 📜 History
+
+### [2026-04-17] — Closed J2-2 (🪝 Install pre-commit + hook install)
+
+**Trigger**: J2-2 closed · 2 SP delivered
+**Net delta global**: 0 días (ritmo esperado)
+**Nueva fecha fin estimada**: 2026-12-15 (sin cambio)
+**Nuevo estado global**: ✅ (sin cambio)
+
+#### Adelantados / Retrasados / Sin cambio
+
+- Todas las fases (F0 – F13): sin cambio.
+
+#### Notas
+
+F0:M1 ahora 2/5 tasks completed (40%). F0 total: 3/72 SP (~4%).
+Velocidad observada en esta sesión: J2-1 (1 SP) + J2-2 (2 SP) = 3 SP en ~25 min, ritmo por encima de la asunción de 8 SP/día.
 
 ### [2026-04-17] — Closed J2-1 (🐍 Install uv + verify Python 3.12)
 
