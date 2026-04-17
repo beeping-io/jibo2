@@ -13,7 +13,7 @@
 - **Fecha fin estimada (con 20% margen)**: 2026-12-15
 - **Velocidad asumida**: 8 story points / día
 - **Estado global**: ✅ En tiempo
-- **Última actualización**: 2026-04-17 (trigger: J2-10 closed · F0:M3 started · 19/72 F0)
+- **Última actualización**: 2026-04-17 (trigger: J2-11 closed · +2 SP, total 21/72 F0)
 
 | #   | Milestone                      | Story points | Inicio est. | Fin est.   | Estado |
 | --- | ------------------------------ | ------------ | ----------- | ---------- | ------ |
@@ -35,6 +35,17 @@
 ---
 
 ## 📜 History
+
+### [2026-04-17] — Closed J2-11 (🔄 Rotating file handler + retention)
+
+**Trigger**: J2-11 closed · 2 SP delivered
+**Net delta global**: 0 días
+**Nueva fecha fin estimada**: 2026-12-15 (sin cambio)
+**Nuevo estado global**: ✅ (sin cambio)
+
+#### Notas
+
+F0:M3 ahora 2/4 (50%). F0 total: 21/72 SP (~29%). Logging pipeline migrado a stdlib bridge — soporta rotación diaria + retención 7d/30d + captura foreign libs. Test suite 22 tests, coverage 100% (61 stmts).
 
 ### [2026-04-17] — Closed J2-10 (📝 structlog base — JSON/console renderer)
 
