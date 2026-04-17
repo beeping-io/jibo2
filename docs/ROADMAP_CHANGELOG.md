@@ -13,7 +13,7 @@
 - **Fecha fin estimada (con 20% margen)**: 2026-12-15
 - **Velocidad asumida**: 8 story points / día
 - **Estado global**: ✅ En tiempo
-- **Última actualización**: 2026-04-17 (trigger: J2-6 closed · F0:M2 started · 10/72 F0)
+- **Última actualización**: 2026-04-17 (trigger: J2-7 closed · +2 SP, total 12/72 F0)
 
 | #   | Milestone                      | Story points | Inicio est. | Fin est.   | Estado |
 | --- | ------------------------------ | ------------ | ----------- | ---------- | ------ |
@@ -35,6 +35,17 @@
 ---
 
 ## 📜 History
+
+### [2026-04-17] — Closed J2-7 (📊 Coverage enforcement in CI)
+
+**Trigger**: J2-7 closed · 2 SP delivered
+**Net delta global**: 0 días
+**Nueva fecha fin estimada**: 2026-12-15 (sin cambio)
+**Nuevo estado global**: ✅ (sin cambio)
+
+#### Notas
+
+F0:M2 ahora 2/4 (50%). F0 total: 12/72 SP (~17%). Coverage gate operativo: CI bloquea PRs cuando coverage < 70%. Current coverage 100%.
 
 ### [2026-04-17] — Closed J2-6 (🧪 pytest config via uv + Makefile gates)
 
