@@ -13,7 +13,7 @@
 - **Fecha fin estimada (con 20% margen)**: 2026-12-15
 - **Velocidad asumida**: 8 story points / día
 - **Estado global**: ✅ En tiempo
-- **Última actualización**: 2026-04-17 (trigger: J2-2 closed · +2 SP, total 3/72 F0)
+- **Última actualización**: 2026-04-17 (trigger: J2-3 closed · +1 SP, total 4/72 F0)
 
 | #   | Milestone                      | Story points | Inicio est. | Fin est.   | Estado |
 | --- | ------------------------------ | ------------ | ----------- | ---------- | ------ |
@@ -35,6 +35,18 @@
 ---
 
 ## 📜 History
+
+### [2026-04-17] — Closed J2-3 (💻 VSCode recommended extensions)
+
+**Trigger**: J2-3 closed · 1 SP delivered (first task with human QA approval)
+**Net delta global**: 0 días
+**Nueva fecha fin estimada**: 2026-12-15 (sin cambio)
+**Nuevo estado global**: ✅ (sin cambio)
+
+#### Notas
+
+F0:M1 ahora 3/5 tasks completed (60%). F0 total: 4/72 SP (~5%).
+Primera tarea que pasa por Human QA Checkpoint con aprobación explícita del owner (banner de recomendaciones + formato al guardar verificados).
 
 ### [2026-04-17] — Closed J2-2 (🪝 Install pre-commit + hook install)
 
