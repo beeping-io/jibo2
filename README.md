@@ -20,9 +20,18 @@ Inspired by the MIT Media Lab Jibo Research Platform but developed independently
 See [`docs/ROADMAP.md`](docs/ROADMAP.md) — 13 phases · ~60 milestones · ~32 weeks.
 See [`docs/ROADMAP_CHANGELOG.md`](docs/ROADMAP_CHANGELOG.md) for the living history of roadmap changes.
 
-## 📦 Installation
+## 🚀 Quickstart
 
-> ⏳ Coming soon. See [`docs/PRODUCTO.md`](docs/PRODUCTO.md) for the full spec.
+```sh
+git clone https://github.com/beeping-io/jibo2.git
+cd jibo2
+./scripts/setup-dev.sh
+```
+
+The script installs managed Python 3.12, syncs the project env and
+wires pre-commit hooks. See [`docs/dev-setup.md`](docs/dev-setup.md)
+for the step-by-step breakdown, platform specifics (macOS + Linux)
+and troubleshooting.
 
 ## 🚀 Usage
 

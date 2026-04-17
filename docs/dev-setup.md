@@ -49,6 +49,51 @@ The repo contains a `.python-version` file pinned to `3.12`. When you
 run `uv venv`, `uv run`, `uv sync` or `pytest` through `uv`, it will
 automatically use 3.12 — no activation needed.
 
+## 🪝 Pre-commit hooks
+
+Jibo2 uses [`pre-commit`](https://pre-commit.com) to enforce quality
+gates **before** code leaves your machine. The hook config lives in
+`.pre-commit-config.yaml` and covers:
+
+- 🧹 Hygiene: trailing whitespace, EOF, YAML/JSON/TOML syntax, large
+  files, merge conflicts, mixed line endings
+- 🔒 Secrets detection: `gitleaks`
+- 🐍 Python: `ruff` (strict lint) + `ruff-format`
+- 📄 Markdown / JSON / YAML: `prettier`
+- 📝 Commit messages: `conventional-pre-commit` (Conventional Commits 1.0)
+
+### Install the hooks
+
+After cloning the repo, install the hooks locally:
+
+```sh
+uv run --with pre-commit pre-commit install --hook-type commit-msg --hook-type pre-commit
+```
+
+This wires two git hooks:
+
+- `pre-commit` → runs before `git commit`, aborts on issues
+- `commit-msg` → validates the commit message format
+
+### One-shot bootstrap
+
+For new contributors, the preferred path is:
+
+```sh
+git clone https://github.com/beeping-io/jibo2.git
+cd jibo2
+./scripts/setup-dev.sh
+```
+
+That script installs managed Python 3.12, syncs the env, installs the
+pre-commit hooks and seeds the caches by running all hooks once.
+
+### Run hooks manually
+
+```sh
+uv run --with pre-commit pre-commit run --all-files
+```
+
 ### Troubleshooting
 
 - **`uv: command not found`** after install on Linux → the installer
