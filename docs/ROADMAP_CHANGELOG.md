@@ -13,7 +13,7 @@
 - **Fecha fin estimada (con 20% margen)**: 2026-12-15
 - **Velocidad asumida**: 8 story points / día
 - **Estado global**: ✅ En tiempo
-- **Última actualización**: 2026-04-17 (trigger: J2-9 closed · F0:M2 at 100% · 16/72 F0)
+- **Última actualización**: 2026-04-17 (trigger: J2-10 closed · F0:M3 started · 19/72 F0)
 
 | #   | Milestone                      | Story points | Inicio est. | Fin est.   | Estado |
 | --- | ------------------------------ | ------------ | ----------- | ---------- | ------ |
@@ -35,6 +35,17 @@
 ---
 
 ## 📜 History
+
+### [2026-04-17] — Closed J2-10 (📝 structlog base — JSON/console renderer)
+
+**Trigger**: J2-10 closed · 3 SP delivered · F0:M3 started
+**Net delta global**: 0 días
+**Nueva fecha fin estimada**: 2026-12-15 (sin cambio)
+**Nuevo estado global**: ✅ (sin cambio)
+
+#### Notas
+
+First production code lands under `src/jibo2/`. First runtime dep (`structlog>=25`). F0:M3 (📊 Logging framework) now 1/4 (25%). F0 total: 19/72 SP (~26%). Test suite 11 → 18 tests, coverage 100% (29 stmts).
 
 ### [2026-04-17] — Closed J2-9 · 🎉 Milestone F0:M2 complete
 
