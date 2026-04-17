@@ -243,9 +243,159 @@ and (macOS) Xcode.
 
 ## 📦 Node + pnpm
 
-> ⏳ Added in milestone **M5 (J2-5)** before starting Phase 3 (Web Backoffice).
+Jibo2's web surfaces (backoffice in F3, marketplace in F7, Cloud Functions
+in F6) plus any JS tooling (markdownlint, commitlint, prettier) run on
+**Node 20 LTS** with **pnpm 9** as the package manager.
+
+### Recommended: fnm (fast, cross-platform)
+
+```sh
+# macOS
+brew install fnm
+
+# Linux
+curl -fsSL https://fnm.vercel.app/install | bash
+# then restart the shell or `source ~/.bashrc`
+
+# All platforms
+fnm install 20
+fnm use 20
+fnm default 20
+```
+
+Add the fnm shell hook to your `~/.zshrc` or `~/.bashrc` so the Node
+version auto-switches when you `cd` into the repo (fnm reads
+`.nvmrc` / `.node-version` files — those land with the first JS subproject).
+
+### Alternative: nvm
+
+```sh
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+# restart shell
+nvm install 20
+nvm use 20
+nvm alias default 20
+```
+
+### Enable pnpm via Corepack
+
+Node 20 ships with [Corepack](https://nodejs.org/api/corepack.html),
+which manages pnpm without a global install:
+
+```sh
+corepack enable
+corepack prepare pnpm@9 --activate
+pnpm --version   # 9.x
+```
+
+### Verification
+
+```sh
+node -v    # v20.x.x
+pnpm -v    # 9.x.x
+```
+
+### Troubleshooting
+
+- **`fnm: command not found`** after install → the installer prints a
+  shell-init block. Append it to your rc file or run it in the current
+  shell.
+- **`corepack: command not found`** → Node ≥ 16.17 is required. Upgrade
+  via `fnm install 20`.
+- **Accidentally running the system Node** → `which node` should resolve
+  to `~/.fnm/aliases/default/bin/node` (or the nvm equivalent). If it
+  points to `/usr/bin/node`, your shell rc is not loading fnm/nvm early
+  enough.
+- **pnpm signature verification errors in CI** → `COREPACK_ENABLE_STRICT=0`
+  as an escape hatch; prefer pinning the exact pnpm version in
+  `package.json#packageManager`.
 
 ## 🤖 ROS2
 
-> ⏳ Added in milestone **M5 (J2-5)**. Host-side install first; robot-side
-> in Phase 2 (F2).
+Jibo2's robot stack targets **ROS2 Humble Hawksbill** (LTS until May 2027),
+which matches the Tegra K1 baseline we reverse-engineer in F1. Develop
+host-side here first; robot-side install lands in F2 once we have a root
+shell.
+
+### macOS (via RoboStack)
+
+ROS2 has no official macOS binaries. Use
+[RoboStack](https://robostack.github.io/) (conda-forge channel):
+
+```sh
+# Install mamba if you don't have it
+brew install --cask miniforge
+
+# Create a ROS2 Humble env
+mamba create -n ros2 -c robostack-staging -c conda-forge ros-humble-desktop
+mamba activate ros2
+
+# Test
+ros2 --help
+```
+
+Activate the env in every terminal that works with ROS2:
+`mamba activate ros2`.
+
+### Linux (Ubuntu 22.04, official APT)
+
+```sh
+# Set the locale
+sudo apt update && sudo apt install locales
+sudo locale-gen en_US en_US.UTF-8
+sudo update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+# Enable the universe repo
+sudo apt install software-properties-common
+sudo add-apt-repository universe
+
+# ROS2 GPG key + apt source
+sudo apt install curl -y
+sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key \
+  -o /usr/share/keyrings/ros-archive-keyring.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] \
+  http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU_CODENAME) main" | \
+  sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
+
+# Install ros-humble-desktop (full dev kit)
+sudo apt update && sudo apt install -y ros-humble-desktop python3-argcomplete
+
+# Source the setup every shell
+echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
+source ~/.bashrc
+```
+
+### Linux (Arch, AUR)
+
+Use the community-maintained `ros2-humble-*` AUR packages, or the
+RoboStack path above if you prefer a conda-isolated env.
+
+### Verification
+
+Run the canonical hello-world in two terminals:
+
+```sh
+# Terminal 1
+ros2 run demo_nodes_py talker
+
+# Terminal 2
+ros2 run demo_nodes_py listener
+```
+
+The listener should print `[INFO] [listener]: I heard: [Hello World: 1]`
+etc. If messages do not cross, your `ROS_DOMAIN_ID` / multicast config
+is off.
+
+### Troubleshooting
+
+- **`Invalid locale`** → `sudo locale-gen en_US.UTF-8` + re-source.
+- **GPG signature errors on APT** → re-run the `curl ros.key` command,
+  the key path might have changed.
+- **`ROS_DOMAIN_ID` clashing with a teammate on the same LAN** → set a
+  unique integer in your shell rc: `export ROS_DOMAIN_ID=42`.
+- **macOS + Apple Silicon (M-series)** → RoboStack on `conda-forge`
+  already ships arm64 builds. Do not try to install the Ubuntu debs
+  inside a VM unless you really have to.
+- **Firewall blocking DDS discovery** → allow UDP multicast on the
+  loopback + LAN interface.
