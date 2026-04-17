@@ -13,8 +13,8 @@
 - **Fecha fin estimada (con 20% margen)**: ~2026-12-15
 - **Velocidad asumida**: 8 story points / día (single-dev en sesiones profundas)
 - **Margen de riesgo aplicado**: +20% sobre la estimación cruda
-- **Estado global**: ✅ En tiempo (proyecto recién iniciado)
-- **Última actualización**: 2026-04-17 (trigger: `/worktree-init` bootstrap)
+- **Estado global**: ✅ En tiempo
+- **Última actualización**: 2026-04-17 (trigger: J2-1 closed · 1 SP delivered)
 
 ## 📊 Métricas del roadmap
 

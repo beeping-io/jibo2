@@ -13,7 +13,7 @@
 - **Fecha fin estimada (con 20% margen)**: 2026-12-15
 - **Velocidad asumida**: 8 story points / día
 - **Estado global**: ✅ En tiempo
-- **Última actualización**: 2026-04-17 (trigger: `/worktree-init` bootstrap)
+- **Última actualización**: 2026-04-17 (trigger: J2-1 closed · 1 SP delivered)
 
 | #   | Milestone                      | Story points | Inicio est. | Fin est.   | Estado |
 | --- | ------------------------------ | ------------ | ----------- | ---------- | ------ |
@@ -35,6 +35,33 @@
 ---
 
 ## 📜 History
+
+### [2026-04-17] — Closed J2-1 (🐍 Install uv + verify Python 3.12)
+
+**Trigger**: J2-1 closed · 1 SP delivered
+**Net delta global**: 0 días (dentro de lo planeado; F0 tenía holgura)
+**Nueva fecha fin estimada**: 2026-12-15 (sin cambio)
+**Nuevo estado global**: ✅ (sin cambio)
+
+#### Adelantados
+
+- Ninguno (task pequeña, impacto no medible a nivel de fase)
+
+#### Retrasados
+
+- Ninguno
+
+#### Sin cambio
+
+- F0 – F13 (todas mantienen fechas objetivo)
+
+#### Cambios de estado de riesgo
+
+- Ninguno
+
+#### Notas
+
+Primera task cerrada del proyecto. Velocidad observada: 1 SP en una sesión — consistente con la velocidad asumida de 8 SP/día. F0:M1 ahora 1/5 tasks completed (20%).
 
 ### [2026-04-17] — Initial ROADMAP creation
 
