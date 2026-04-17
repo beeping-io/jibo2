@@ -113,3 +113,69 @@ def test_configure_is_idempotent(monkeypatch: pytest.MonkeyPatch) -> None:
     # Second call without force should be a no-op — no exception, flag stays True.
     configure()
     assert log_module._configured is True
+
+
+def test_file_handler_not_added_when_log_dir_unset(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    monkeypatch.delenv("JIBO2_LOG_DIR", raising=False)
+    configure(force=True)
+
+    root = logging.getLogger()
+    file_handlers = [
+        h for h in root.handlers if isinstance(h, logging.handlers.TimedRotatingFileHandler)
+    ]
+    assert file_handlers == []
+
+
+def test_file_handler_added_when_log_dir_set(
+    monkeypatch: pytest.MonkeyPatch, tmp_path: pytest.TempPathFactory
+) -> None:
+    monkeypatch.setenv("JIBO2_LOG_DIR", str(tmp_path))
+    configure(force=True)
+
+    root = logging.getLogger()
+    file_handlers = [
+        h for h in root.handlers if isinstance(h, logging.handlers.TimedRotatingFileHandler)
+    ]
+    assert len(file_handlers) == 1
+
+    log = get_logger("jibo2.test")
+    log.info("to_disk", hello="world")
+
+    # Flush the file handler so the record lands on disk synchronously.
+    for handler in file_handlers:
+        handler.flush()
+
+    log_file = tmp_path / "jibo2.log"
+    assert log_file.exists()
+    content = log_file.read_text(encoding="utf-8")
+    assert "to_disk" in content
+
+
+def test_retention_dev_is_7_days(
+    monkeypatch: pytest.MonkeyPatch, tmp_path: pytest.TempPathFactory
+) -> None:
+    monkeypatch.setenv("JIBO2_LOG_DIR", str(tmp_path))
+    monkeypatch.delenv("JIBO2_ENV", raising=False)
+    configure(force=True)
+
+    root = logging.getLogger()
+    file_handlers = [
+        h for h in root.handlers if isinstance(h, logging.handlers.TimedRotatingFileHandler)
+    ]
+    assert file_handlers[0].backupCount == 7
+
+
+def test_retention_prod_is_30_days(
+    monkeypatch: pytest.MonkeyPatch, tmp_path: pytest.TempPathFactory
+) -> None:
+    monkeypatch.setenv("JIBO2_LOG_DIR", str(tmp_path))
+    monkeypatch.setenv("JIBO2_ENV", "prod")
+    configure(force=True)
+
+    root = logging.getLogger()
+    file_handlers = [
+        h for h in root.handlers if isinstance(h, logging.handlers.TimedRotatingFileHandler)
+    ]
+    assert file_handlers[0].backupCount == 30
