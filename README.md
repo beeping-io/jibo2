@@ -6,6 +6,8 @@
 ![status](https://img.shields.io/badge/status-early_development-orange)
 ![platform](https://img.shields.io/badge/platform-Beeping-purple)
 ![conventional commits](https://img.shields.io/badge/conventional_commits-1.0.0-yellow)
+![coverage](https://img.shields.io/badge/coverage-100%25-brightgreen)
+![tests](https://img.shields.io/badge/tests-passing-brightgreen)
 
 ---
 

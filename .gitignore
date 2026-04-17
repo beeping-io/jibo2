@@ -73,6 +73,7 @@ MANIFEST
 .coverage
 .coverage.*
 htmlcov/
+coverage.xml
 .hypothesis/
 .venv/
 venv/
