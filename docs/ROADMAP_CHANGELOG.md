@@ -13,7 +13,7 @@
 - **Fecha fin estimada (con 20% margen)**: 2026-12-15
 - **Velocidad asumida**: 8 story points / día
 - **Estado global**: ✅ En tiempo
-- **Última actualización**: 2026-04-17 (trigger: J2-4 closed · +2 SP, total 6/72 F0)
+- **Última actualización**: 2026-04-17 (trigger: J2-5 closed · F0:M1 at 100% · 8/72 F0)
 
 | #   | Milestone                      | Story points | Inicio est. | Fin est.   | Estado |
 | --- | ------------------------------ | ------------ | ----------- | ---------- | ------ |
@@ -35,6 +35,23 @@
 ---
 
 ## 📜 History
+
+### [2026-04-17] — Closed J2-5 · 🎉 Milestone F0:M1 complete
+
+**Trigger**: J2-5 closed · 2 SP delivered · **Milestone F0:M1 🛠️ Dev environment + toolchain → 100%**
+**Net delta global**: 0 días (M1 cerrado dentro de su ventana estimada)
+**Nueva fecha fin estimada**: 2026-12-15 (sin cambio)
+**Nuevo estado global**: ✅ (sin cambio)
+
+#### Milestone closed
+
+- **F0:M1 🛠️ Dev environment + toolchain**: 5/5 tasks · 8 SP consumed.
+
+#### Notas
+
+F0 total progress: 8/72 SP (~11%). Velocidad acumulada en la sesión: 8 SP (J2-1 to J2-5) — alineado con la velocidad asumida de 8 SP/día.
+
+Siguientes milestones en F0: M2 (testing), M3 (logging), M4 (secrets), M5 (Firebase), M6 (analytics/crashlytics/perf).
 
 ### [2026-04-17] — Closed J2-4 (🎯 Flutter SDK install + doctor docs)
 
