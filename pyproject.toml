@@ -7,10 +7,9 @@ license = { text = "Apache-2.0" }
 authors = [{ name = "Alfred Rivas", email = "alfred@beeping.io" }]
 requires-python = ">=3.12"
 
-# Root-level placeholder. Real subpackages (jibo2-robot, jibo2-skills-sdk,
-# jibo2-cli, jibo2-firmware-tools) will live under `packages/` or their
-# own repos once Phase 0 M0.1 scaffolds them.
-dependencies = []
+dependencies = [
+  "structlog>=25",
+]
 
 # PEP 735 dependency groups — picked up by `uv sync` by default.
 # Keep dev tooling pinned to avoid "works on my machine" drift.
