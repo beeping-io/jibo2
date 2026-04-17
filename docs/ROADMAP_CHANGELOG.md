@@ -13,7 +13,7 @@
 - **Fecha fin estimada (con 20% margen)**: 2026-12-15
 - **Velocidad asumida**: 8 story points / día
 - **Estado global**: ✅ En tiempo
-- **Última actualización**: 2026-04-17 (trigger: J2-5 closed · F0:M1 at 100% · 8/72 F0)
+- **Última actualización**: 2026-04-17 (trigger: J2-6 closed · F0:M2 started · 10/72 F0)
 
 | #   | Milestone                      | Story points | Inicio est. | Fin est.   | Estado |
 | --- | ------------------------------ | ------------ | ----------- | ---------- | ------ |
@@ -35,6 +35,17 @@
 ---
 
 ## 📜 History
+
+### [2026-04-17] — Closed J2-6 (🧪 pytest config via uv + Makefile gates)
+
+**Trigger**: J2-6 closed · 2 SP delivered · F0:M2 started
+**Net delta global**: 0 días
+**Nueva fecha fin estimada**: 2026-12-15 (sin cambio)
+**Nuevo estado global**: ✅ (sin cambio)
+
+#### Notas
+
+F0:M2 (🧪 Testing infrastructure) ahora 1/4 (25%). F0 total: 10/72 SP (~14%). CI y local dev ahora corren exactamente los mismos comandos vía `make lint` / `make test` — paridad asegurada.
 
 ### [2026-04-17] — Closed J2-5 · 🎉 Milestone F0:M1 complete
 
