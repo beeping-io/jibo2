@@ -13,7 +13,7 @@
 - **Fecha fin estimada (con 20% margen)**: 2026-12-15
 - **Velocidad asumida**: 8 story points / día
 - **Estado global**: ✅ En tiempo
-- **Última actualización**: 2026-04-17 (trigger: J2-11 closed · +2 SP, total 21/72 F0)
+- **Última actualización**: 2026-04-18 (trigger: J2-12 closed · +3 SP, total 24/72 F0, J2-90 added)
 
 | #   | Milestone                      | Story points | Inicio est. | Fin est.   | Estado |
 | --- | ------------------------------ | ------------ | ----------- | ---------- | ------ |
@@ -35,6 +35,21 @@
 ---
 
 ## 📜 History
+
+### [2026-04-18] — Closed J2-12 + Scope change (+1 task)
+
+**Trigger**: J2-12 closed · 3 SP delivered · +1 new task in M5 (J2-90)
+**Net delta global**: +3 SP added to F0:M5 scope (~0.4 days with 8 SP/day)
+**Nueva fecha fin estimada**: 2026-12-15 (sin cambio — absorbed by margin)
+**Nuevo estado global**: ✅ (sin cambio)
+
+#### Scope change
+
+- **J2-90 🔗 Connect log-level override to Firebase Remote Config** (3 SP, Backlog) added to F0:M5. Wires the runtime override hook from J2-12 to Firebase Remote Config once Firebase projects are provisioned. Blocked by J2-19.
+
+#### Notas
+
+F0:M3 ahora 3/4 (75%). F0 total: 24/72 SP (~33%) — 75 total SP now counting J2-90. Test suite 22 → 26. Coverage 100% (75 stmts, 14 branches).
 
 ### [2026-04-17] — Closed J2-11 (🔄 Rotating file handler + retention)
 
