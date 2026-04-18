@@ -58,6 +58,12 @@ unfilled keys are harmless until their feature lands.
 
 > ⏳ Contribution guide + skills SDK coming in Phase 6.
 
+## 🔒 Security
+
+Found a vulnerability? See [`SECURITY.md`](SECURITY.md) for private
+disclosure. Internal rotation runbooks live in
+[`docs/security.md`](docs/security.md).
+
 ## 📜 License
 
 [Apache 2.0](LICENSE)
