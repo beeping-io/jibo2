@@ -13,7 +13,7 @@
 - **Fecha fin estimada (con 20% margen)**: 2026-12-15
 - **Velocidad asumida**: 8 story points / día
 - **Estado global**: ✅ En tiempo
-- **Última actualización**: 2026-04-18 (trigger: J2-15 closed · +3 SP, total 31/72 F0, J2-92 added)
+- **Última actualización**: 2026-04-18 (trigger: J2-17 closed · J2-16 blocked · 33/72 F0)
 
 | #   | Milestone                      | Story points | Inicio est. | Fin est.   | Estado |
 | --- | ------------------------------ | ------------ | ----------- | ---------- | ------ |
@@ -35,6 +35,21 @@
 ---
 
 ## 📜 History
+
+### [2026-04-18] — Closed J2-17 (🔄 Rotation runbooks) + J2-16 blocked
+
+**Trigger**: J2-17 closed · 2 SP delivered · J2-16 marked blocked by J2-19
+**Net delta global**: 0 días
+**Nueva fecha fin estimada**: 2026-12-15 (sin cambio)
+**Nuevo estado global**: ✅ (sin cambio)
+
+#### Blocking decision
+
+- **J2-16 🗝️ Firebase Secret Manager integration** explicitly blocked by J2-19 (Firebase projects must exist first). State returned to Backlog. Cascade task J2-92 already queued in M5. F0:M4 will close at 100% only after J2-16 unblocks post-J2-19.
+
+#### Notas
+
+F0:M4 ahora 3/4 delivered (75%) — J2-16 pending but tracked as blocked. F0 total: 33/72 SP (~46%). First human-QA-approved documentation task (rotation runbooks reviewed by owner).
 
 ### [2026-04-18] — Closed J2-15 (🔑 Secrets loader utility) + Scope change
 
