@@ -13,7 +13,7 @@
 - **Fecha fin estimada (con 20% margen)**: 2026-12-15
 - **Velocidad asumida**: 8 story points / día
 - **Estado global**: ✅ En tiempo
-- **Última actualización**: 2026-04-18 (trigger: J2-14 closed · F0:M4 started · 28/72 F0)
+- **Última actualización**: 2026-04-18 (trigger: J2-15 closed · +3 SP, total 31/72 F0, J2-92 added)
 
 | #   | Milestone                      | Story points | Inicio est. | Fin est.   | Estado |
 | --- | ------------------------------ | ------------ | ----------- | ---------- | ------ |
@@ -35,6 +35,21 @@
 ---
 
 ## 📜 History
+
+### [2026-04-18] — Closed J2-15 (🔑 Secrets loader utility) + Scope change
+
+**Trigger**: J2-15 closed · 3 SP delivered · +1 new task in M5 (J2-92)
+**Net delta global**: +3 SP added to F0:M5 scope (~0.4 days)
+**Nueva fecha fin estimada**: 2026-12-15 (sin cambio — absorbed by margin)
+**Nuevo estado global**: ✅ (sin cambio)
+
+#### Scope change
+
+- **J2-92 🔥 `FirebaseSecretManagerSource` implementation** (3 SP, Backlog) added to F0:M5. Satisfies the `SecretSource` Protocol from J2-15. Blocked by J2-19.
+
+#### Notas
+
+F0:M4 ahora 2/4 (50%). F0 total: 31/72 SP (~43%). Test suite 39 → 53, coverage 97.55%. Third Firebase follow-up queued in M5 (J2-90 log level + J2-91 tracing + J2-92 secrets).
 
 ### [2026-04-18] — Closed J2-14 (📄 .env.example template)
 
