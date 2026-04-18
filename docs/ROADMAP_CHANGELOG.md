@@ -13,7 +13,7 @@
 - **Fecha fin estimada (con 20% margen)**: 2026-12-15
 - **Velocidad asumida**: 8 story points / día
 - **Estado global**: ✅ En tiempo
-- **Última actualización**: 2026-04-18 (trigger: J2-13 closed · F0:M3 at 100% · 27/72 F0)
+- **Última actualización**: 2026-04-18 (trigger: J2-14 closed · F0:M4 started · 28/72 F0)
 
 | #   | Milestone                      | Story points | Inicio est. | Fin est.   | Estado |
 | --- | ------------------------------ | ------------ | ----------- | ---------- | ------ |
@@ -35,6 +35,17 @@
 ---
 
 ## 📜 History
+
+### [2026-04-18] — Closed J2-14 (📄 .env.example template)
+
+**Trigger**: J2-14 closed · 1 SP delivered · F0:M4 started
+**Net delta global**: 0 días
+**Nueva fecha fin estimada**: 2026-12-15 (sin cambio)
+**Nuevo estado global**: ✅ (sin cambio)
+
+#### Notas
+
+F0:M4 (🔐 Secrets + config management) ahora 1/4 (25%). F0 total: 28/72 SP (~39%).
 
 ### [2026-04-18] — Closed J2-13 · 🎉 Milestone F0:M3 complete + Scope change
 

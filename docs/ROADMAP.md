@@ -14,7 +14,7 @@
 - **Velocidad asumida**: 8 story points / día (single-dev en sesiones profundas)
 - **Margen de riesgo aplicado**: +20% sobre la estimación cruda
 - **Estado global**: ✅ En tiempo
-- **Última actualización**: 2026-04-18 (trigger: J2-13 closed · F0:M3 at 100% · 27/72 F0)
+- **Última actualización**: 2026-04-18 (trigger: J2-14 closed · F0:M4 started · 28/72 F0)
 
 ## 📊 Métricas del roadmap
 
