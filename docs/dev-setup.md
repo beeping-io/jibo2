@@ -114,6 +114,30 @@ task (`J2-90 · 🔗 Connect log-level override to Firebase Remote Config`)
 wires the remote source once F0:M5 provisions the Firebase projects.
 Until then, env + explicit calls cover every path.
 
+## ⏱️ Performance tracing
+
+`jibo2.tracing` exposes a tracer-agnostic API so any critical code path
+can be instrumented without coupling to a backend:
+
+```python
+from jibo2 import get_logger, span, trace
+
+@trace("boot")
+def boot() -> None:
+    ...
+
+# Or inline:
+with span("stt_request", provider="whisper") as s:
+    ...
+    s.set_attribute("latency_ms", elapsed)
+```
+
+Default tracer is `NoOpTracer` (zero overhead). Tests swap in
+`MemoryTracer` to assert spans. **Firebase Performance Monitoring**
+lands as `FirebasePerfTracer` in follow-up task
+`J2-91 · 🔥 Connect tracing hooks to Firebase Performance Monitoring`
+once F0:M5 provisions the Firebase projects.
+
 ## 🎯 Make targets
 
 For day-to-day work, the repo exposes a `Makefile` with the usual verbs:
