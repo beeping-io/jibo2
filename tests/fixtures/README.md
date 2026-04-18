@@ -5,12 +5,12 @@ fixtures by the subsystem that consumes them.
 
 ## 📂 Layout
 
-| Folder          | Consumers                                        | Typical files                               |
-| --------------- | ------------------------------------------------ | ------------------------------------------- |
-| `audio/`        | F2:M17 (audio I/O), F4 (STT/TTS/VAD benchmarks)  | `.wav` mono 16kHz, `.mp3`, `.flac`          |
-| `images/`       | F2:M18 (camera), F5:M41 (face), F2:M16 (LCD)     | `.png`, `.jpg`, deterministic resolutions   |
-| `firmware/`     | F1:M10 analysis (small anonymised slices only)   | `.bin` < 1 MB, partial dumps, parsed tables |
-| `conversations/`| F4:M35 (personality), F4:M29 (LLM benchmark)     | `.jsonl` (one JSON turn per line)           |
+| Folder           | Consumers                                       | Typical files                               |
+| ---------------- | ----------------------------------------------- | ------------------------------------------- |
+| `audio/`         | F2:M17 (audio I/O), F4 (STT/TTS/VAD benchmarks) | `.wav` mono 16kHz, `.mp3`, `.flac`          |
+| `images/`        | F2:M18 (camera), F5:M41 (face), F2:M16 (LCD)    | `.png`, `.jpg`, deterministic resolutions   |
+| `firmware/`      | F1:M10 analysis (small anonymised slices only)  | `.bin` < 1 MB, partial dumps, parsed tables |
+| `conversations/` | F4:M35 (personality), F4:M29 (LLM benchmark)    | `.jsonl` (one JSON turn per line)           |
 
 Each subfolder ships with a `.gitkeep` so it exists in git before the
 first real fixture lands.

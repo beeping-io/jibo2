@@ -27,13 +27,16 @@ See [`docs/ROADMAP_CHANGELOG.md`](docs/ROADMAP_CHANGELOG.md) for the living hist
 ```sh
 git clone https://github.com/beeping-io/jibo2.git
 cd jibo2
+cp .env.example .env        # fill in only the keys you need
 ./scripts/setup-dev.sh
 ```
 
 The script installs managed Python 3.12, syncs the project env and
 wires pre-commit hooks. See [`docs/dev-setup.md`](docs/dev-setup.md)
 for the step-by-step breakdown, platform specifics (macOS + Linux)
-and troubleshooting.
+and troubleshooting. [`.env.example`](.env.example) documents every
+environment variable the project uses — placeholders are safe and
+unfilled keys are harmless until their feature lands.
 
 ## 🚀 Usage
 
