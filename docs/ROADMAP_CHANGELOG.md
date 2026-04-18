@@ -13,7 +13,7 @@
 - **Fecha fin estimada (con 20% margen)**: 2026-12-15
 - **Velocidad asumida**: 8 story points / día
 - **Estado global**: ✅ En tiempo
-- **Última actualización**: 2026-04-18 (trigger: J2-12 closed · +3 SP, total 24/72 F0, J2-90 added)
+- **Última actualización**: 2026-04-18 (trigger: J2-13 closed · F0:M3 at 100% · 27/72 F0)
 
 | #   | Milestone                      | Story points | Inicio est. | Fin est.   | Estado |
 | --- | ------------------------------ | ------------ | ----------- | ---------- | ------ |
@@ -35,6 +35,27 @@
 ---
 
 ## 📜 History
+
+### [2026-04-18] — Closed J2-13 · 🎉 Milestone F0:M3 complete + Scope change
+
+**Trigger**: J2-13 closed · 3 SP delivered · **Milestone F0:M3 📊 Logging framework → 100%** · +1 new task in M5 (J2-91)
+**Net delta global**: +3 SP added to F0:M5 scope (~0.4 days)
+**Nueva fecha fin estimada**: 2026-12-15 (sin cambio — absorbed by margin)
+**Nuevo estado global**: ✅ (sin cambio)
+
+#### Milestone closed
+
+- **F0:M3 📊 Logging framework (debug-max)**: 4/4 tasks · 11 SP consumed (3 + 2 + 3 + 3).
+
+#### Scope change
+
+- **J2-91 🔥 Connect tracing hooks to Firebase Performance Monitoring** (3 SP, Backlog) added to F0:M5. Satisfies the `Tracer` Protocol from J2-13. Blocked by J2-19.
+
+#### Notas
+
+F0 total: 27/72 SP (~38%) — 78 total SP contando J2-90 + J2-91. 3 de 6 milestones de F0 cerrados (M1, M2, M3). Test suite 26 → 39 tests, coverage 97.76%.
+
+Siguientes milestones en F0: M4 (🔐 secrets), M5 (🔥 Firebase), M6 (📈 analytics).
 
 ### [2026-04-18] — Closed J2-12 + Scope change (+1 task)
 
