@@ -18,6 +18,7 @@ def _reset_structlog(monkeypatch: pytest.MonkeyPatch) -> None:
     import jibo2.log
 
     monkeypatch.setattr(jibo2.log, "_configured", False, raising=False)
+    monkeypatch.setattr(jibo2.log, "_level_override", None, raising=False)
     structlog.reset_defaults()
 
 
@@ -179,3 +180,60 @@ def test_retention_prod_is_30_days(
         h for h in root.handlers if isinstance(h, logging.handlers.TimedRotatingFileHandler)
     ]
     assert file_handlers[0].backupCount == 30
+
+
+def test_set_level_overrides_env(
+    monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
+) -> None:
+    from jibo2 import set_level
+
+    monkeypatch.setenv("JIBO2_ENV", "prod")
+    monkeypatch.setenv("JIBO2_LOG_LEVEL", "INFO")
+    configure(force=True)
+
+    set_level("WARNING")
+
+    log = get_logger("jibo2.test")
+    log.info("should_be_dropped")
+    log.warning("should_emit")
+
+    out = capsys.readouterr().out
+    assert "should_be_dropped" not in out
+    assert "should_emit" in out
+
+
+def test_reset_level_restores_env(
+    monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
+) -> None:
+    from jibo2 import reset_level, set_level
+
+    monkeypatch.setenv("JIBO2_ENV", "prod")
+    monkeypatch.setenv("JIBO2_LOG_LEVEL", "INFO")
+    configure(force=True)
+
+    set_level("ERROR")
+    get_logger().info("dropped_during_override")
+
+    reset_level()
+    get_logger().info("emitted_after_reset")
+
+    out = capsys.readouterr().out
+    assert "dropped_during_override" not in out
+    assert "emitted_after_reset" in out
+
+
+def test_set_level_accepts_int(monkeypatch: pytest.MonkeyPatch) -> None:
+    from jibo2 import set_level
+
+    set_level(logging.DEBUG)
+
+    import jibo2.log as log_module
+
+    assert log_module._resolve_level() == logging.DEBUG
+
+
+def test_set_level_rejects_unknown_name() -> None:
+    from jibo2 import set_level
+
+    with pytest.raises(ValueError, match="unknown log level"):
+        set_level("NOT_A_LEVEL")

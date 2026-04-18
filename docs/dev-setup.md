@@ -94,6 +94,26 @@ pre-commit hooks and seeds the caches by running all hooks once.
 uv run --with pre-commit pre-commit run --all-files
 ```
 
+## 📝 Changing the log level at runtime
+
+`jibo2.log` exposes runtime overrides:
+
+```python
+from jibo2 import get_logger, set_level, reset_level
+
+set_level("DEBUG")     # takes precedence over JIBO2_LOG_LEVEL
+get_logger().debug("now visible")
+
+reset_level()          # back to env-driven default
+```
+
+Priority order: explicit `set_level` > `JIBO2_LOG_LEVEL` env > `INFO`.
+
+The hook is the landing zone for **Firebase Remote Config**. A follow-up
+task (`J2-90 · 🔗 Connect log-level override to Firebase Remote Config`)
+wires the remote source once F0:M5 provisions the Firebase projects.
+Until then, env + explicit calls cover every path.
+
 ## 🎯 Make targets
 
 For day-to-day work, the repo exposes a `Makefile` with the usual verbs:

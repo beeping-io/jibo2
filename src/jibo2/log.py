@@ -14,6 +14,14 @@ Environment variables:
   ``dev`` / 30 days in ``prod``. stdout always receives everything;
   the file handler is additive.
 
+Runtime overrides:
+
+- :func:`set_level` and :func:`reset_level` let callers override the
+  level at runtime. This is the hook Firebase Remote Config plugs into
+  (see the follow-up task in F0:M5). Priority: explicit override >
+  env var > INFO default. If Remote Config is unreachable the env
+  value still drives the level — offline-first is a project principle.
+
 Architecture: structlog pipeline → stdlib ``logging`` → one or more
 handlers (``StreamHandler`` + ``TimedRotatingFileHandler``). This bridge
 lets the file handler do rotation natively and also captures foreign
@@ -37,6 +45,7 @@ import structlog
 from structlog.types import Processor
 
 _configured: bool = False
+_level_override: int | None = None
 
 _SHARED_PROCESSORS: list[Processor] = [
     structlog.contextvars.merge_contextvars,
@@ -61,11 +70,43 @@ def _renderer() -> Processor:
 
 
 def _resolve_level() -> int:
+    # Explicit runtime override wins over env.
+    if _level_override is not None:
+        return _level_override
     raw = os.environ.get("JIBO2_LOG_LEVEL", "INFO").upper()
     level = getattr(logging, raw, None)
     if isinstance(level, int):
         return level
     return logging.INFO
+
+
+def _coerce_level(level: str | int) -> int:
+    if isinstance(level, int):
+        return level
+    resolved = getattr(logging, level.upper(), None)
+    if isinstance(resolved, int):
+        return resolved
+    msg = f"unknown log level: {level!r}"
+    raise ValueError(msg)
+
+
+def set_level(level: str | int) -> None:
+    """Override the active log level at runtime.
+
+    Accepts a level name (``"DEBUG"``, ``"INFO"``, ...) or the matching
+    stdlib ``logging`` integer. Takes precedence over ``JIBO2_LOG_LEVEL``
+    and persists until :func:`reset_level` is called.
+    """
+    global _level_override
+    _level_override = _coerce_level(level)
+    configure(force=True)
+
+
+def reset_level() -> None:
+    """Clear any runtime override and return to the env-driven level."""
+    global _level_override
+    _level_override = None
+    configure(force=True)
 
 
 def _retention_days() -> int:
